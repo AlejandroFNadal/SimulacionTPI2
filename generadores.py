@@ -21,9 +21,9 @@ def generarHorasInconveniente():
     return round(ran.uniform(0.02831,3.9783),2)
 
 def generarHorasTarea():
-    return round(ran.uniform(5.645,2.1594),2)
+    return round(ran.normalvariate(5.645,2.1594),2)
 
 def generarCantidadTareas():
-    return round(ran.choices([1,2,3,4,5,6,7],[5,11,18,16,13,21,16]),2)
+    return round(ran.choices([1,2,3,4,5,6,7],weights=[5,11,18,16,13,21,16],k=1)[0],2)
 
 
