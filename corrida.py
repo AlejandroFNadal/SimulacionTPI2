@@ -13,6 +13,8 @@ def corridaSemana(info = False):
     #Estructura de matriz
     #HorasPreparacion | HorasInconveniente | HorasSuenio | HorasPersonales
     horasPorActividadTotal=[0,0,0,0]
+    if info:
+        print("---------------------------------")
     for i in range(0,7):
         dia.append(generadores.generarHorasPreparacion())
         horasPorActividadTotal[0] += dia[0]
@@ -31,7 +33,9 @@ def corridaSemana(info = False):
         semana.append(dia)
         #reiniciamos el dia
         dia = []
+    
     if info:
+        print("Prep. Inconv. Sueño SueñoFinde")
         for dia in semana:
             print(dia)
     if info:
