@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['simulacion.py'],
-             pathex=['/home/ale/Documents/Universidad/SimulacionTP2'],
+             pathex=['C:\\Users\\Anastacius\\Documents\\SimulacionTPI2'],
              binaries=[],
              datas=[],
              hiddenimports=[],

@@ -1,5 +1,6 @@
 import statistics as stat
-import math 
+import math
+import random as ran
 
 #TPI 2 Simulacion, UTN FRRE Junio de 2020
 #Alejandro Fabian Nadal
@@ -13,7 +14,7 @@ print("Desea obtener los valores internos de cada corrida?")
 print("Presione 1 y luego Enter para ver los valores internos de cada corrida")
 print("Presione 2 y luego Enter para ver solo los resultados finales")
  
-
+ran.seed(14)
 valueMostrar=int(input())
 
 mostrar= False
@@ -35,7 +36,7 @@ for i in range(0,300):
         val="Si"
     print("Dia: "+str(i)+" Resultado "+val)
 print("----------------------------------")
-print("Tras simular 300 semanas, la probabilidad de que al alumno no le alcancen las horas es de "+str(round((quiebres*100/300),4))+"% , habiendo ocurrido "+str(quiebres)+" quiebres")
+
 
 #Para poder calcular intervalos, paso los valores booleanos a numeros
 datosfinales=[]
@@ -53,7 +54,7 @@ varianza = round(stat.variance(datosfinales),4)
 alfa=0.05
 limiteInferior = round(media - varianza/math.sqrt(300*alfa/2),4)
 limiteSuperior = round(media + varianza/math.sqrt(300*alfa/2),4)
-
+print("Tras simular 300 semanas, la probabilidad de que al alumno le alcancen las horas es de "+str(round((100 -quiebres*100/300),4))+"% +- "+str(round((limiteSuperior-limiteInferior)/2,3))+"% , habiendo ocurrido "+str(quiebres)+" quiebres")
 print("Con una media de "+ str(media)+" en un intervalo de confianza con un limite inferior  "+str(limiteInferior)+" y superior de "+str(limiteSuperior))
 
 print("La varianza de los resultados fue "+ str(varianza))
